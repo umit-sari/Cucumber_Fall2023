@@ -1,6 +1,6 @@
 Feature: US1013 Kullanici iFrame'e gecis yapabilmeli
 
-  @wip
+
   Scenario: TC17 iFrame otomasyon testi
     Given kullanici "webUniIframeUrl" anasayfaya gider
     And   ourProduct linkine tiklemek icin iframe'e gecis yapar

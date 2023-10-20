@@ -87,4 +87,9 @@ public class AmazonStepdefinitions {
         Assert.assertTrue(actualIlkUrunIsmi.contains(arananUrun));
     }
 
+    @Then("arama sonuclarinin sonuc sayisini  yazdirir")
+    public void aramaSonuclarininSonucSayisiniYazdirir() {
+      String sonucDegeri= amazonPage.sonucYaziElementi.getText();
+        System.out.println(sonucDegeri);
+    }
 }
