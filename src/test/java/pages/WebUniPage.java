@@ -25,6 +25,24 @@ public class WebUniPage {
 
     @FindBy(xpath = "//button[@id='login-button']")
     public WebElement loginButonu;
+    @FindBy(linkText = "Our Products")
+    public WebElement ourProductLinki;
+
+    @FindBy(xpath = "//iframe[@id='frame']")
+    public WebElement iframeElementi;
+
+    @FindBy(id ="camera-img")
+    public WebElement camerasElementi;
+
+    @FindBy(xpath = "//h4")
+    public WebElement alertYaziElementi;
+
+    @FindBy(xpath = "//*[text()='Close']")
+    public WebElement alertCloseButton;
+
+    @FindBy(xpath = "(//*[@id='nav-title'])[1]")
+    public WebElement webDriverLinki;
+
 
 
 }

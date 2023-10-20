@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -73,5 +74,48 @@ public class WebUniStepdefinitions {
     @And("sayfalari kapatir")
     public void sayfalariKapatir() {
         Driver.quitDriver();
+    }
+
+    @Given("ourProduct linkine tiklemek icin iframe'e gecis yapar")
+    public void our_product_linkine_tiklemek_icin_iframe_e_gecis_yapar() {
+        Driver.getDriver().switchTo().frame(webUniPage.iframeElementi);
+    }
+    @Given("Our Products buttonuna basar")
+    public void our_products_buttonuna_basar() {
+        webUniPage.ourProductLinki.click();
+
+    }
+    @Then("acilan sayfada Cameras'i tiklar")
+    public void acilan_sayfada_cameras_i_tiklar() {
+        webUniPage.camerasElementi.click();
+
+    }
+    @Then("Popup mesajini yazdirir")
+    public void popup_mesajini_yazdirir() {
+        System.out.println(webUniPage.alertYaziElementi.getText());
+
+    }
+    @Then("close buttonuna basar")
+    public void close_buttonuna_basar() {
+        webUniPage.alertCloseButton.click();
+
+    }
+    @Then("iframe'den cikis yapar")
+    public void iframe_den_cikis_yapar() {
+        Driver.getDriver().switchTo().defaultContent();
+
+    }
+    @Then("WebdriverUniversity.com \\(IFrame) linkini tiklar")
+    public void webdriver_university_com_i_frame_linkini_tiklar() {
+        webUniPage.webDriverLinki.click();
+
+    }
+    @Then("acilan sayfa url'inin {string} oldugunu test eder")
+    public void acilan_sayfa_url_inin_oldugunu_test_eder(String expectedUrl) {
+
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertEquals(expectedUrl,actualUrl);
+
+
     }
 }
